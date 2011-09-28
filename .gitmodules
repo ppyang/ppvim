@@ -18,13 +18,13 @@
 	url = git://github.com/ervandew/supertab.git
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/delimitMate"]
 	path = .vim/bundle/delimitMate
-	url = http://github.com/Raimondi/delimitMate.git
+	url = git://github.com/Raimondi/delimitMate.git
 [submodule ".vim/bundle/checksyntax"]
 	path = .vim/bundle/checksyntax
-	url = http://github.com/tomtom/checksyntax_vim.git
+	url = git://github.com/tomtom/checksyntax_vim.git
 [submodule ".vim/bundle/command-t"]
 	path = .vim/bundle/command-t
 	url = git://github.com/wincent/Command-T.git
@@ -33,7 +33,7 @@
 	url = git://github.com/spf13/vim-markdown.git
 [submodule ".vim/bundle/easytags"]
 	path = .vim/bundle/easytags
-	url = http://github.com/spf13/vim-easytags.git
+	url = git://github.com/spf13/vim-easytags.git
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = git://github.com/spf13/vim-surround.git
@@ -60,10 +60,10 @@
 	url = git://github.com/leshill/vim-json.git
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
+	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/pydoc.vim"]
 	path = .vim/bundle/pydoc.vim
-	url = https://github.com/fs111/pydoc.vim.git
+	url = git://github.com/fs111/pydoc.vim.git
 [submodule ".vim/bundle/vim-addon-mw-utils"]
 	path = .vim/bundle/vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
