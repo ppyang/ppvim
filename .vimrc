@@ -12,6 +12,12 @@
 	" Basics {
 		set nocompatible 		" must be first line
 		set background=dark     " Assume a dark background
+        set encoding=utf-8 "encoding to utf-8
+        set fileencoding=utf-8 "set encoding when opening files to utf-8
+        set ch=2		" Make command line two lines high
+        set clipboard=unnamed
+        set gfn=DejaVu\ Sans\ Mono:h12,Monaco:h12
+        set guifontwide=SimHei:h11,Monaco:h12
 	" }
 
 	" Windows Compatible {
@@ -32,14 +38,17 @@
 " }
 
 " General {
-	set background=dark         " Assume a dark background
-    if !has('win32') && !has('win64')
-        set term=$TERM       " Make arrow and other keys work
-    endif
+" "" remap 'jj' in insert mode to <ESC> for quicker escape
+   inoremap jj <ESC>
+   "automatically apply the chages in vimrc to vim without restart
+   autocmd! bufwritepost .vimrc source %
+    "if !has('win32') && !has('win64')
+        "set term=$TERM       " Make arrow and other keys work
+    "endif
 	filetype plugin indent on  	" Automatically detect file types.
 	syntax on 					" syntax highlighting
 	set mouse=a					" automatically enable mouse usage
-	"set autochdir 				" always switch to the current file directory.. Messes with some plugins, best left commented out
+    set autochdir 				" always switch to the current file directory.. Messes with some plugins, best left commented out
 	" not every vim is compiled with this, use the following line instead
 	" If you use command-t plugin, it conflicts with this, comment it out.
      "autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
@@ -69,7 +78,7 @@
 " }
 
 " Vim UI {
-	color solarized   	       		" load a colorscheme
+	color jellybeans   	       		" load a colorscheme
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
 
@@ -111,7 +120,7 @@
 	set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
 	set scrolljump=5 				" lines to scroll when cursor leaves screen
 	set scrolloff=3 				" minimum lines to keep above and below cursor
-	set foldenable  				" auto fold code
+    set nofoldenable  				" auto fold code
 	set gdefault					" the /g flag on :s substitutions by default
     set list
     set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
@@ -148,7 +157,11 @@
 	map <C-K> <C-W>k<C-W>_
 	map <C-L> <C-W>l<C-W>_
 	map <C-H> <C-W>h<C-W>_
-	
+	"move between windows with ease
+    noremap <leader>h <C-w>h
+    noremap <leader>j <C-w>j
+    noremap <leader>k <C-w>k
+    noremap <leader>l <C-w>l
     " Wrapped lines goes down/up to next row, rather than next line in file.
     nnoremap j gj
     nnoremap k gk
