@@ -2,5 +2,7 @@
 *.pyc
 *._*
 *.vim/sessions/
+*.vim/tmp/
 vimfiles/sessions/
-vimfiles/tmp
+vimfiles/tmp/
+*doc/tags
