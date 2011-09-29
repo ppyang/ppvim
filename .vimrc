@@ -61,7 +61,7 @@
 	set history=1000  				" Store a ton of history (default is 20)
     set undofile
     set undoreload=1000
-	set spell 		 	        	" spell checking on
+	set nospell 		 	        	" spell checking on
 	
 	" Setting up the directories {
 		set backup 						" backups are nice ...
