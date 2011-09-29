@@ -122,7 +122,7 @@
     set visualbell      "flash screen when bell
     set ttyfast         "i have fast connection
     set listchars=tab:▸\ ,eol:¬
-    set lazyredraw
+    "set lazyredraw
     set wildignore+=*.pyc,.hg,.git
     set matchtime=3
     set showbreak=↪
