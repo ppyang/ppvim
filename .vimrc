@@ -59,19 +59,13 @@
 	set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 	set virtualedit=onemore 	   	" allow for cursor beyond last character
 	set history=1000  				" Store a ton of history (default is 20)
+    set undofile
+    set undoreload=1000
 	set spell 		 	        	" spell checking on
 	
 	" Setting up the directories {
 		set backup 						" backups are nice ...
-        " Moved to function at bottom of the file
-		"set backupdir=$HOME/.vimbackup//  " but not when they clog .
-		"set directory=$HOME/.vimswap// 	" Same for swap files
-		"set viewdir=$HOME/.vimviews// 	" same for view files
 		
-		"" Creating directories if they don't exist
-		"silent execute '!mkdir -p $HVOME/.vimbackup'
-		"silent execute '!mkdir -p $HOME/.vimswap'
-		"silent execute '!mkdir -p $HOME/.vimviews'
 		au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
 		au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
 	" }
@@ -113,6 +107,7 @@
 	set incsearch					" find as you type search
 	set hlsearch					" highlight search terms
 	set winminheight=0				" windows can be 0 line high 
+    set magic
 	set ignorecase					" case insensitive search
 	set smartcase					" case sensitive when uc present
 	set wildmenu					" show list instead of just completing
@@ -123,7 +118,14 @@
     set nofoldenable  				" auto fold code
 	set gdefault					" the /g flag on :s substitutions by default
     set list
-    set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+    set lbr
+    set visualbell      "flash screen when bell
+    set ttyfast         "i have fast connection
+    set listchars=tab:▸\ ,eol:¬
+    set lazyredraw
+    set wildignore+=*.pyc,.hg,.git
+    set matchtime=3
+    set showbreak=↪
 
 
 " }
@@ -446,10 +448,15 @@
 function! InitializeDirectories()
   let separator = "."
   let parent = $HOME 
-  let prefix = '.vim'
+  let prefix = '.vim/tmp/'
+  if !isdirectory(parent.'/'.prefix)
+      call mkdir(parent.'/'.prefix)
+  endif
+
   let dir_list = { 
 			  \ 'backup': 'backupdir', 
 			  \ 'views': 'viewdir', 
+              \ 'undo' : 'undodir',
 			  \ 'swap': 'directory' }
 
   for [dirname, settingname] in items(dir_list)
