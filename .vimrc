@@ -27,6 +27,12 @@
 		  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 		endif
 	" }
+
+    "Unix {
+        if has('unix') && !has('mac')
+            set t_Co=256 "enable 256 colors"
+        endif
+    "}
     " 
 	" Setup Bundle Support {
 	" The next two lines ensure that the ~/.vim/bundle/ system works
@@ -61,13 +67,13 @@
 	set history=1000  				" Store a ton of history (default is 20)
     set undofile
     set undoreload=1000
-	set nospell 		 	        	" spell checking on
+    set nospell 		 	        	" spell checking on
 	
 	" Setting up the directories {
 		set backup 						" backups are nice ...
 		
-		au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
-		au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
+		"au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
+		"au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
 	" }
 " }
 
