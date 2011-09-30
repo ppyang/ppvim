@@ -27,10 +27,21 @@
 		  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 		endif
 	" }
-
+    "Mac{
+    if has('mac')
+        " run file with PHP CLI (CTRL-M)¬
+        autocmd FileType php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>¬
+        "parse php file with CLI (CTRL-L)¬
+        autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
+    endif
+    "}
     "Unix {
         if has('unix') && !has('mac')
             set t_Co=256 "enable 256 colors"
+            " run file with PHP CLI (CTRL-M)¬
+            autocmd FileType php noremap <C-M> :w!<CR>:!/usr/local/php5/bin/php %<CR>¬
+            "parse php file with CLI (CTRL-L)¬
+            autocmd FileType php noremap <C-L> :!/usr/local/php5/bin/php -l %<CR>
         endif
     "}
     " 
@@ -46,6 +57,14 @@
 " General {
 " "" remap 'jj' in insert mode to <ESC> for quicker escape
    inoremap jj <ESC>
+
+   "space toggle folds!"
+   nnoremap <space> za
+   "use sane regx"
+   nnoremap / /\v
+   vnoremap / /\v
+   "use the currently active spell checking for complete
+   set complete+=kspell
    "automatically apply the chages in vimrc to vim without restart
    autocmd! bufwritepost .vimrc source %
     "if !has('win32') && !has('win64')
