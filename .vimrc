@@ -318,7 +318,7 @@
 
 	" EasyTags {
        " Disabling for now. It doesn't work well on large tag files 
-        let g:loaded_easytags = 1  " Disable until it's working better
+        "let g:loaded_easytags = 1  " Disable until it's working better
 		let g:easytags_cmd = 'ctags'
         let g:easytags_dynamic_files = 1
 		if !has('win32') && !has('win64')
@@ -378,11 +378,11 @@
 	" Richard's plugins {
 		" Fuzzy Finder {
 			""" Fuzzy Find file, tree, buffer, line
-			nmap <leader>ff :FufFile **/<CR>
-			nmap <leader>ft :FufFile<CR>
-			nmap <leader>fb :FufBuffer<CR>
-			nmap <leader>fl :FufLine<CR>
-			nmap <leader>fr :FufRenewCache<CR>
+			"nmap <leader>ff :FufFile **/<CR>
+			"nmap <leader>ft :FufFile<CR>
+			"nmap <leader>fb :FufBuffer<CR>
+			"nmap <leader>fl :FufLine<CR>
+			"nmap <leader>fr :FufRenewCache<CR>
 		" }
 
 		" Session List {
