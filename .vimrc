@@ -37,7 +37,6 @@
     "}
     "Unix {
         if has('unix') && !has('mac')
-            set t_Co=256 "enable 256 colors"
             " run file with PHP CLI (CTRL-M)¬
             autocmd FileType php noremap <C-M> :w!<CR>:!/usr/local/php5/bin/php %<CR>¬
             "parse php file with CLI (CTRL-L)¬
@@ -520,3 +519,6 @@ endfunction
         source ~/.vimrc.local
     endif
 " }
+if has('unix') && !has('mac')
+    set t_Co=256 "enable 256 colors"
+endif
