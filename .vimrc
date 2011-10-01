@@ -274,6 +274,7 @@
 		let g:NERDShutUp=1
 
 		let b:match_ignorecase = 1
+        let $JS_CMD='node' " use node.js for javascript interpretation
 	" }
 	
 	" ShowMarks {
